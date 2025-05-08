@@ -75,6 +75,8 @@ class CashRegister:
         self.payment_entry = tk.Entry(root)
         self.payment_entry.grid(row=11, column=0, columnspan=2, sticky="we", padx=10, pady=2)
 
+        
+        #Maksāšanas veids ar karti vai skaidrā vai nu ar telefonu
         tk.Label(root, text="Payment Method").grid(row=12, column=0, columnspan=2, padx=10, pady=(10, 2))
         self.payment_method = tk.StringVar()
         self.payment_method.set("Cash")

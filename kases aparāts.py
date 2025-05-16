@@ -48,21 +48,21 @@ class CashRegister:
 
     def check_password(self):
         password = self.password_entry.get()
-        correct_password = "1234"  # Change this to your desired password
+        correct_password = "1234" 
 
         if password == correct_password:
             self.login_window.destroy()
-            self.ask_for_bag()  # Ask about the bag
+            self.ask_for_bag() 
         else:
             self.error_label.config(text="Incorrect password. Try again.")
 
     def ask_for_bag(self):
-        # Create a window asking about the bag
+        
         self.bag_window = tk.Toplevel(self.root)
-        self.bag_window.title("Do you need a bag?")
+        self.bag_window.title("Maisiņš?")
         self.bag_window.geometry("300x200")
         
-        # Ask if the user needs a bag
+       
         self.bag_label = tk.Label(self.bag_window, text="Maisiņ vaig?")
         self.bag_label.pack(pady=10)
 
@@ -81,22 +81,22 @@ class CashRegister:
         self.confirm_button.pack(pady=10)
 
     def confirm_bag_choice(self):
-        # Get the selected options
+       
         needs_bag = self.bag_var.get() == "Yes"
         bag_size = self.size_var.get()
 
-        # Close the bag selection window
+      
         self.bag_window.destroy()
 
-        # If the user needs a bag, store that information and proceed to the cash register
+
         self.needs_bag = needs_bag
         self.bag_size = bag_size
 
-        # Now open the main cash register window
+       
         self.create_cash_register_ui()
 
     def create_cash_register_ui(self):
-        # Item name
+       
         self.name_label = tk.Label(self.root, text="Item name:")
         self.name_label.grid(row=1, column=0, sticky="e", padx=10, pady=5)
         self.name_entry = tk.Entry(self.root)

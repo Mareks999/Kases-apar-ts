@@ -222,21 +222,7 @@ class CashRegister:
                 # Show receipt in a message box
                 messagebox.showinfo("Maksājums veikts", receipt)
 
-                # Create filename with timestamp
-                filename = f"receipt_{timestamp.replace(':', '-').replace(' ', '_')}.txt"
-                print(f"Čeks tiek saglabāts šādā vietā: {filename}")  # Debugging line to check filename
-
-                # Saglabāt čeku konkrētā vietā
-                # Piemēram, ja vēlies saglabāt čeku uz C: diska, norādi pilnu ceļu:
-                save_folder = "C:/Users/YourUsername/Documents"  # maini uz savu ceļu
-                if not os.path.exists(save_folder):
-                    os.makedirs(save_folder)  # Ja mape neeksistē, izveido to
-                file_path = os.path.join(save_folder, filename)
-                
-                # Save receipt to file
-                with open(file_path, "w", encoding="utf-8") as file:
-                    file.write(receipt)
-                print(f"Čeks saglabāts: {file_path}")  # Parādīs ceļu, kur saglabājās čeks
+               
 
         except ValueError:
             messagebox.showerror("Error", "Please enter a valid payment amount")
